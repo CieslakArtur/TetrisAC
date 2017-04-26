@@ -1,5 +1,6 @@
 /**
- * The class is responsible for processing information about the current view.
+ * The class is responsible for processing information about the current view. 
+ * @author Artur Cieslak
  * @version 1.0
  * @since 26.04.2017
  */
@@ -145,7 +146,6 @@ public class DisplayTable {
 	public static boolean isGameOver(){
 		return gameOver;
 	}
-	
 }
 
 

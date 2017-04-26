@@ -2,7 +2,7 @@ import java.util.Random;
 
 /**
  * The class is responsible for storing information about the location of bricks and modifying their coordinates.
- * @author Artur Cieœlak
+ * @author Artur Cieslak
  * @version 1.0
  * @since 26.04.2017
  */
@@ -35,20 +35,19 @@ public class Shape {
 		//Start falling
 		DisplayTable.setFalling(true);
 		
-		allShapes=new int[][][]{{{-1,0},{0,0},{1,0},{2,0}},		//IShape
-							{{-1,0},{0,0},{1,0},{1,1}},			//LShape
-							{{-1,0},{0,0},{1,0},{0,1}},			//TShape
-							{{0,0},{0,1},{1,0},{1,1}},			//OShape
-							{{-1,0},{0,0},{1,0},{-1,1}},		//L2Sape
-							{{-1,0},{0,0},{0,1},{1,1}},			//ZShape
-							{{-1,1},{0,1},{0,0},{1,0}}};		//Z2Shape
+		allShapes=new int[][][]{{{-1,0},{0,0},{1,0},{2,0}},			//I_Shape
+							{{-1,0},{0,0},{1,0},{1,1}},				//L_Shape
+							{{-1,0},{0,0},{1,0},{0,1}},				//T_Shape
+							{{0,0},{0,1},{1,0},{1,1}},				//O_Shape
+							{{-1,0},{0,0},{1,0},{-1,1}},			//L2_Sape
+							{{-1,0},{0,0},{0,1},{1,1}},				//Z_Shape
+							{{-1,1},{0,1},{0,0},{1,0}}};			//Z2_Shape
 							//Copy shape coordinates to a new array
 							for(int i=0;i<4;i++){
 								for(int j=0;j<2;j++){
 									shape[i][j]=allShapes[rand][i][j];
 									}
 								}
-
 	}
 	/**
 	 * Converts local coordinates to global coordinates
@@ -64,7 +63,7 @@ public class Shape {
 	}
 	
 	/**
-	 * Copies the coordinates of the brick to the 'gridTab'.
+	 * This function copy the coordinates of the brick to the 'gridTab'.
 	 */
 	public void copyXY(){
 
@@ -94,7 +93,6 @@ public class Shape {
 					shape[i][0]=-shape[i][1];
 					shape[i][1]=s;
 			}
-
 			//If new location is not possible
 			if(!DisplayTable.checkMove(shape, X, Y)){
 				//Turn the brick 90 degrees to the left.
@@ -118,7 +116,6 @@ public class Shape {
 					shape[i][0]=shape[i][1];
 					shape[i][1]=-s;
 			}
-
 			//If new location is not possible
 			if(!DisplayTable.checkMove(shape, X, Y)){
 				//Turn the brick 90 degrees to the right.
@@ -177,7 +174,6 @@ public class Shape {
 	public int getRand(){
 		return rand;
 	}
-	
 }
 
 	
