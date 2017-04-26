@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.Timer;
 /**
  * The class is responsible for displaying the Tetris graphical interface.
- * @author Artur Cieœlak
+ * @author Artur Cieslak
  * @version 1.0
  * @since 26.04.2017
  */
@@ -13,7 +13,6 @@ public class GUI extends JFrame implements ActionListener{
 	 * The Serial Version UID
 	 */
 	private static final long serialVersionUID = 1L;
-	
 	//Objects of the 'Shape' class
 	private Shape brick,nextBrick;
 	private Timer time;
@@ -34,25 +33,23 @@ public class GUI extends JFrame implements ActionListener{
 		brick=new Shape(5,gridSize);
 		//Create a Shape object
 		nextBrick=new Shape(5,gridSize);
-
+		//Updating view
 		repaint();
 		//Adds listener
 		addKeyListener(new ButtonAdapter());
 		//Create a Timer object
 		time=new Timer(300,this);
-		
 	}		
 	/**Creates a graphical user interface */
 	public void createGUI(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JMenuBar mb=new JMenuBar();
 		setJMenuBar(mb);
-		
 		JPanel panel=new JPanel();
 		mb.add(panel);
 		
 		JButton newGame=new JButton("New Game");
-		/*Set focusable flag */
+		//Set focusable flag 
 		newGame.setFocusable(false);
 		//Button action in anonymous class
 		newGame.addActionListener(new ActionListener(){
@@ -68,7 +65,7 @@ public class GUI extends JFrame implements ActionListener{
 		panel.add(newGame);
 		
 		JButton start=new JButton("Start");
-		/*Set focusable flag */
+		//Set focusable flag 
 		start.setFocusable(false);
 		//Button action in anonymous class
 		start.addActionListener(new ActionListener(){
@@ -80,7 +77,7 @@ public class GUI extends JFrame implements ActionListener{
 		panel.add(start);
 		
 		JButton pause=new JButton("Pause");
-		/*Set focusable flag */
+		//Set focusable flag 
 		pause.setFocusable(false);
 		//Button action in anonymous class
 		pause.addActionListener(new ActionListener(){
@@ -113,7 +110,9 @@ public class GUI extends JFrame implements ActionListener{
 		setResizable(false);
 		setVisible(true);
 	}
-	/**Draws the current location of items */
+	/**
+	 * Draws the current location of items 
+	 */
 	public void paint(Graphics g){
 		super.paint(g);
 		//An array of colors
@@ -123,12 +122,12 @@ public class GUI extends JFrame implements ActionListener{
 	            new Color(102, 204, 204), new Color(218, 170, 0)};
 		//Origin of coordinate system
 		g.translate(15,80);
-		
+		//Drawing background
 		g.setColor(new Color(79,156,156));
 		g.drawRect(0, 0, gridSize*10, gridSize*20);
 		g.fillRect(0, 0, gridSize*10, gridSize*20);
 		
-		//Get the 'brick' object's coordinates and display it on the screen
+		//Get the brick's coordinates and display them on the screen
 		brick.setDrawShape(drawShape);
 		for(int i=0;i<4;i++){
 			g.setColor(colors[brick.getRand()]);
@@ -136,7 +135,7 @@ public class GUI extends JFrame implements ActionListener{
 			g.setColor(Color.WHITE);
 			g.drawRect(drawShape[i][0], drawShape[i][1], gridSize, gridSize);
 		}
-		//Get the 'nextBrick' object's coordinates and display it on the screen
+		//Get the next brick's coordinates and display them on the screen
 		nextBrick.setDrawShape(drawShape);
 		for(int i=0;i<4;i++){
 			g.setColor(colors[nextBrick.getRand()]);
@@ -156,7 +155,6 @@ public class GUI extends JFrame implements ActionListener{
 				}
 			}
 		}
-		
 		//Display the player score
 		g.setColor(Color.BLACK);
 		g.drawString("SCORE "+DisplayTable.getScore(),15, 20);
@@ -166,12 +164,12 @@ public class GUI extends JFrame implements ActionListener{
 			g.drawString("GAME OVER", 100, 300);
 		}
 	}
-
-	/**Method is executed when the state of the object 'time' changes */
+	/**
+	 * Method is executed when the state of the object 'time' changes 
+	 */
 	public void actionPerformed(ActionEvent e) {
 		//If the brick is not falling and the game is not finished
 		if(!DisplayTable.isFalling() && !DisplayTable.gameOver()){
-
 			brick=nextBrick;
 			//Create a new object that will appear next
 			nextBrick=new Shape(5,gridSize);
@@ -189,7 +187,6 @@ public class GUI extends JFrame implements ActionListener{
 			//Updating view
 			repaint();
 		}
-
 	}
 	
 	/**

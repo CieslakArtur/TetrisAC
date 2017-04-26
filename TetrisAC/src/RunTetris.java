@@ -1,7 +1,6 @@
-
 /**
  * The class is responsible for running the application
- * @author Artur Cieœlak
+ * @author Artur Cieslak
  * @version 1.0
  * @since 26.04.2017
  */
@@ -16,5 +15,4 @@ public class RunTetris {
 		new GUI();
 		
 	}
-
 }
