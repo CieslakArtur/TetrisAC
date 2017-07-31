@@ -1,3 +1,5 @@
+import java.awt.EventQueue;
+
 /**
  * The class is responsible for running the application
  * @author Artur Cieslak
@@ -11,8 +13,8 @@ public class RunTetris {
 	 * @param args Unused.
 	 */
 	public static void main(String[] args) {
-		
-		new GUI();
-		
+		EventQueue.invokeLater(()->{
+			new GUI();
+		});
 	}
 }
