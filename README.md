@@ -1,2 +1,2 @@
 # TetrisAC
-The simple Tetris game in Java Swing using Timer class.
+The simple Tetris game with Java Swing.
