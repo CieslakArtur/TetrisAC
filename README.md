@@ -1,6 +1,6 @@
 # Tetris Game
 <p align="left" style="display:block;">
-  One of the first projects in Java.
+  One of the first projects in Java Swing
 </p>
 <p align="left" style="display:block;">
   <b>Controls</b>
