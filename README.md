@@ -12,11 +12,13 @@
   right rotation - 'D' button
 </p>
 <p align="center" style="display:block;">
-  <img src="https://image.ibb.co/hAXoud/te1.jpg"/>
-</p>
-<p align="center" style="display:block;">
-  <img src="https://image.ibb.co/kkEF7y/te2.jpg"/>
-</p>
-<p align="center" style="display:block;">
-  <img src="https://image.ibb.co/c9S2ny/te3.jpg"/>
+  <span style="float:left; width:33%;">
+    <img src="https://image.ibb.co/hAXoud/te1.jpg"/>
+  </span>
+  <span style="float:left; width:33%;">
+    <img src="https://image.ibb.co/kkEF7y/te2.jpg"/>
+  </span>
+  <span style="float:left; width:33%;">
+    <img src="https://image.ibb.co/c9S2ny/te3.jpg"/>
+  </span>
 </p>
